@@ -14,5 +14,7 @@ class UserLogin(UserBase):
     password: str
 
 
-class User(UserBase):
+class UserInfo(UserBase):
     id: int
+    fullname: str
+
