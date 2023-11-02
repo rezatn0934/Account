@@ -18,3 +18,9 @@ class BaseTokenSchema(BaseModel):
 class AccessToken(BaseTokenSchema):
     token_type: str = 'access'
     exp: str = datetime.datetime.utcnow() + datetime.timedelta(seconds=ACCESS_TOKEN_LIFETIME)
+
+
+class RefreshToken(BaseTokenSchema):
+    token_type: str = 'refresh'
+    exp: str = datetime.datetime.utcnow() + datetime.timedelta(seconds=REFRESH_TOKEN_LIFETIME)
+
