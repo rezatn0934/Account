@@ -14,3 +14,7 @@ class BaseTokenSchema(BaseModel):
     iat: str = datetime.datetime.utcnow()
     jti: str
 
+
+class AccessToken(BaseTokenSchema):
+    token_type: str = 'access'
+    exp: str = datetime.datetime.utcnow() + datetime.timedelta(seconds=ACCESS_TOKEN_LIFETIME)
